@@ -18,7 +18,7 @@ func main(){
 	fmt.Println("Get your tickets now!!!")
 
 	
-for{
+for remainingTickets > 0 && len(bookings) < 50{
 
 	var firstname string
 	var lastname string
@@ -38,21 +38,10 @@ for{
 	fmt.Printf("enter no of tickets you want \n")
 	fmt.Scan(&usertickets)
 
-	if usertickets > remainingTickets{
-		fmt.Printf("we only have %v tickets  ",usertickets)
-		break
-	}
-
-	remainingTickets= remainingTickets-usertickets
+	if usertickets < remainingTickets{
+		remainingTickets= remainingTickets-usertickets
 	bookings = append(bookings, firstname + " " + lastname)
-
-
-	fmt.Printf("the whole array%v\n ",bookings)
-	fmt.Printf("the FIRST array%v\n ",bookings[0])
-	fmt.Printf("the whole array TYPE %T\n ",bookings)
-	fmt.Printf("the whole array Length%T\n ",len(bookings))
-
-    firstnames :=[]string{}
+	firstnames :=[]string{}
 	for  _,booking := range  bookings{
 		var names=strings.Fields(booking)		
 		firstnames=append(firstnames,names[0])
@@ -67,6 +56,22 @@ for{
 		break
 		
 	}
+
+	
+
+	}else{
+		fmt.Printf("we only have %v tickets  ",usertickets)
+	}
+	
+
+	
+
+	fmt.Printf("the whole array%v\n ",bookings)
+	fmt.Printf("the FIRST array%v\n ",bookings[0])
+	fmt.Printf("the whole array TYPE %T\n ",bookings)
+	fmt.Printf("the whole array Length%T\n ",len(bookings))
+
+   
 
 }
 }
