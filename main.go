@@ -38,6 +38,11 @@ for{
 	fmt.Printf("enter no of tickets you want \n")
 	fmt.Scan(&usertickets)
 
+	if usertickets > remainingTickets{
+		fmt.Printf("we only have %v tickets  ",usertickets)
+		break
+	}
+
 	remainingTickets= remainingTickets-usertickets
 	bookings = append(bookings, firstname + " " + lastname)
 
@@ -48,13 +53,20 @@ for{
 	fmt.Printf("the whole array Length%T\n ",len(bookings))
 
     firstnames :=[]string{}
-	for  booking := range  bookings{
+	for  _,booking := range  bookings{
 		var names=strings.Fields(booking)		
 		firstnames=append(firstnames,names[0])
 
 
 	}
 	fmt.Printf("the first names of booking are %v\n" ,firstnames)
+
+   
+	if remainingTickets == 0{
+		fmt.Println("our Conference is full .come back nexy year ")
+		break
+		
+	}
 
 }
 }
