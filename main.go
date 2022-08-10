@@ -39,7 +39,12 @@ for remainingTickets > 0 && len(bookings) < 50{
 	fmt.Printf("enter no of tickets you want \n")
 	fmt.Scan(&usertickets)
 
-	if usertickets < remainingTickets{
+	isvalidname:=len(firstfirstname) >=2 && len(lastname) >=2
+	isvalidemail := string.Contains(email, "@")
+	isvalidticket :=usertickets > 0 && usertickets <= remainingTickets
+	
+
+	if isvalidemail && isvalidname && isvalidticket{
 		remainingTickets= remainingTickets-usertickets
 	bookings = append(bookings, firstname + " " + lastname)
 	firstnames :=[]string{}
@@ -61,18 +66,28 @@ for remainingTickets > 0 && len(bookings) < 50{
 	
 
 	}else{
-		fmt.Printf("we only have %v tickets  ",usertickets)
+		if !isvalidname{
+			fmt.Println("first name or lastname you entered is too short")
+		}
+		fmt.Printf("your input data is invalid ")
 	}
-	
-
-	
-
-	fmt.Printf("the whole array%v\n ",bookings)
-	fmt.Printf("the FIRST array%v\n ",bookings[0])
-	fmt.Printf("the whole array TYPE %T\n ",bookings)
-	fmt.Printf("the whole array Length%T\n ",len(bookings))
-
    
 
 }
+city : = "LONDON"
+switch city {
+case "New york ":
+
+case "singapore" :
+
+case "berlin" :
+
+	defalut :
+	fmt.Println("no valid  city selected")
+	
+}
+}
+
+func getusers (){
+	fmt.Println("welcome to our confrence ")
 }
