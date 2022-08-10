@@ -6,6 +6,7 @@ import (
 )
 
 
+
 func main(){
 	confrenceName :="GO confrence"
 	const  confrenceTickets=50
